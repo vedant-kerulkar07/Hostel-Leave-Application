@@ -4,8 +4,7 @@ A full-stack Hostel Leave Management System designed to streamline the process o
 The system supports role-based access for Students and Admins, ensuring secure and efficient leave management.
 
 🌐 Live Demo:
-👉 https://hostel-leave-application-m7uf.vercel.app/
-
+👉 https://hostel-leave-application-9tzj.vercel.app/
 🚀 Features
 👤 Student Role
 

@@ -86,9 +86,9 @@ const AdminAnalytics = () => {
           <div className="mt-6 h-72">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={monthlyData} margin={{ top: 20, right: 10, left: -20, bottom: 5 }}>
-                <XAxis dataKey="month" axisLine={false} tickLine={false} tick={{ fill: '#64748b' }}/>
-                <YAxis axisLine={false} tickLine={false} tick={{ fill: '#64748b' }}/>
-                <Tooltip cursor={{ fill: 'rgba(241, 245, 249, 0.5)' }} contentStyle={{ borderRadius: '8px', border: '1px solid #e2e8f0' }}/>
+                <XAxis dataKey="month" axisLine={false} tickLine={false} tick={{ fill: '#64748b' }} />
+                <YAxis axisLine={false} tickLine={false} tick={{ fill: '#64748b' }} />
+                <Tooltip cursor={{ fill: 'rgba(241, 245, 249, 0.5)' }} contentStyle={{ borderRadius: '8px', border: '1px solid #e2e8f0' }} />
                 <Bar dataKey="requests" fill="#0ea5e9" radius={[4, 4, 0, 0]}>
                   <LabelList dataKey="requests" position="top" fill="#64748b" fontSize={12} />
                 </Bar>
@@ -120,7 +120,7 @@ const AdminAnalytics = () => {
                       <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                     ))}
                   </Pie>
-                  <Tooltip contentStyle={{ borderRadius: '8px', border: '1px solid #e2e8f0' }}/>
+                  <Tooltip contentStyle={{ borderRadius: '8px', border: '1px solid #e2e8f0' }} />
                 </PieChart>
               </ResponsiveContainer>
             </div>
@@ -142,14 +142,15 @@ const AdminAnalytics = () => {
         {/* --- Card 3: Top Students --- */}
         <section className="lg:col-span-5 bg-white p-6 rounded-lg shadow-sm">
           <h2 className="text-xl font-semibold text-slate-700 text-[#1B6A76]">Top Students</h2>
-          <div className="mt-4 flex justify-between px-4 pb-2 border-b text-sm font-medium text-slate-500">
+          <div className="mt-4 grid grid-cols-[1fr_120px_120px] px-4 pb-2 border-b text-sm font-medium text-slate-500">
             <span>Name</span>
-            <span>Leave Count</span>
-             <span>Action</span>
+            <span className="text-center">Leave Count</span>
+            <span className="text-right">Action</span>
           </div>
+
           <ul className="mt-2 space-y-1">
             {analytics.topStudents.map((s, index) => (
-              <li key={index} className="flex justify-between items-center py-3 px-4 rounded-lg hover:bg-slate-50 transition-colors">
+              <li key={index} className="grid grid-cols-[1fr_120px_120px] items-center py-3 px-4 rounded-lg hover:bg-slate-50 transition-colors">
                 <div className="flex items-center gap-4">
                   {/* Avatar */}
                   <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center font-bold text-blue-600">
@@ -161,11 +162,12 @@ const AdminAnalytics = () => {
                   </div>
 
                 </div>
-                  <div className=" justify-between items-center place-items-center">
-                    <span className="font-semibold text-slate-700 ">{s.leaveCount}</span>
-                  </div>
-                
-                <div className="flex items-center gap-12">
+                <div className="text-center font-semibold text-slate-700">
+                  {s.leaveCount}
+                </div>
+
+
+                <div className="flex justify-end">
                   <button
                     onClick={() => navigate(`/admin/student/${s._id.studentId}`)}
                     className="px-4 py-1 text-sm bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
@@ -173,6 +175,7 @@ const AdminAnalytics = () => {
                     View
                   </button>
                 </div>
+
               </li>
             ))}
           </ul>

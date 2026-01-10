@@ -1,5 +1,5 @@
 // src/pages/ApplyLeaveForm.jsx
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaCalendarAlt, FaCheck } from "react-icons/fa";
 import { useForm } from "react-hook-form";
@@ -51,6 +51,7 @@ const leaveSchema = z
   );
 
 export default function ApplyLeaveForm() {
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const user = useSelector((state) => state.user);
 
@@ -342,7 +343,7 @@ export default function ApplyLeaveForm() {
                 className="w-full inline-flex items-center justify-center gap-3 bg-teal-700 hover:bg-teal-800 text-white py-3 rounded-md text-sm font-semibold shadow-md transition disabled:opacity-60 disabled:cursor-not-allowed"
               >
                 <FaCheck />
-                Apply for Leave
+                {loading ? "Loading..." : "Apply for Leave"}
               </Button>
             </form>
           </Form>

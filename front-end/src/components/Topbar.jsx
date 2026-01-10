@@ -9,32 +9,32 @@ import { removeUser } from "@/redux/user/user.slice";
 
 const Topbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
- const user = useSelector((state) => state.user)
-   const dispatch = useDispatch();
-   const navigate = useNavigate();
-   const handleLogout = async() => {
-       try {
-           const response = await fetch(`${getEnv("VITE_API_URL")}/auth/logout`, {
-             method: "get",
-             credentials: "include", // important for cookie-based auth
-           });
-     
-           const data = await response.json();
-     
-           if (!response.ok) {
-             return showToast("error", data.message);
-           }
-     
-           // ✅ Save user in Redux
-           dispatch(removeUser());
-           navigate("/login");
-           // ✅ Show success message
-           showToast("success", data.message);
-         } catch (err) {
-           showToast("error", err.message || "Server error");
-         }
-   }
- 
+  const user = useSelector((state) => state.user)
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const handleLogout = async () => {
+    try {
+      const response = await fetch(`${getEnv("VITE_API_URL")}/auth/logout`, {
+        method: "get",
+        credentials: "include", // important for cookie-based auth
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        return showToast("error", data.message);
+      }
+
+      //  Save user in Redux
+      dispatch(removeUser());
+      navigate("/login");
+      //  Show success message
+      showToast("success", data.message);
+    } catch (err) {
+      showToast("error", err.message || "Server error");
+    }
+  }
+
 
 
   return (
@@ -85,7 +85,7 @@ const Topbar = () => {
           </Link>
           <div >
             <button onClick={handleLogout}
-            className="bg-red-500 hover:bg-red-600 text-white rounded-full font-medium transition-colors duration-200 px-4 py-2.5">
+              className="bg-red-500 hover:bg-red-600 text-white rounded-full font-medium transition-colors duration-200 px-4 py-2.5">
               Log out
             </button>
           </div>
@@ -110,9 +110,12 @@ const Topbar = () => {
           <Link to="/dashboard/profile" onClick={() => setMenuOpen(false)}>
             <li className="hover:text-teal-600 transition">Profile</li>
           </Link>
-          <li>
-            <FaUserCircle className="text-2xl text-orange-500 cursor-pointer hover:opacity-80 transition" />
-          </li>
+          <div >
+            <button onClick={handleLogout}
+              className="bg-red-500 hover:bg-red-600 text-white rounded-full font-medium transition-colors duration-200 px-4 py-2.5">
+              Log out
+            </button>
+          </div>
         </ul>
       )}
     </header>

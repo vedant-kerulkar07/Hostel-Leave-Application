@@ -18,7 +18,6 @@ const StudentAnalytics = () => {
     };
     fetchData();
   }, [studentId]);
-  console.log(analytics)
   const monthlyData = analytics.monthlyRequests.map((count, index) => ({
     month: new Date(0, index).toLocaleString("default", { month: "short" }),
     requests: count,

@@ -1,90 +1,80 @@
-🏨 Hostel Leave Application
+<h1>🏨 Hostel Leave Application</h1></br>
+A simple and responsive  Hostel Leave Application app built with React.js , Node.js ,Express,js and MongoDB. The system supports role-based access for Students and Admins, ensuring secure and efficient leave management.<br>
+<h1>🚀 Features</h1><br>
 
-A full-stack Hostel Leave Management System designed to streamline the process of applying, approving, and managing student leave requests.
-The system supports role-based access for Students and Admins, ensuring secure and efficient leave management.
+<br><h1>Student Role</h1></br>
 
-🌐 Live Demo:
-👉 https://hostel-leave-application-9tzj.vercel.app/
-🚀 Features
-👤 Student Role
+<br>Secure signup & login using JWT Authentication</br>
 
-Secure signup & login using JWT Authentication
+<br>Apply for hostel leave with reason and date range</br>
 
-Apply for hostel leave with reason and date range
+<br>View leave request status (Pending / Approved / Rejected)</br>
 
-View leave request status (Pending / Approved / Rejected)
+<br>Track complete leave history</br>
 
-Track complete leave history
+<br>Access protected student-only routes</br>
 
-Access protected student-only routes
+<br><h1>Admin Role</h1><br>
 
-🧑‍💼 Admin Role
+<br>Secure admin login</br>
 
-Secure admin login
+<br>View all student leave requests</br>
 
-View all student leave requests
+<br>Approve or reject student leave applications</br>
 
-Approve or reject student leave applications
+<br>Manage leave records<br>
 
-Manage leave records
+<br>Monitor leave analytics (monthly requests, reasons, top students)</br>
 
-Monitor leave analytics (monthly requests, reasons, top students)
+<br>Access protected admin-only routes</br>
 
-Access protected admin-only routes
+<br><h1>🔐 Authentication & Security</h1></br>
 
-🔐 Authentication & Security
+<br>JWT-based authentication</br>
 
-JWT-based authentication
+<br>Role-based authorization (Student / Admin)</br>
 
-Role-based authorization (Student / Admin)
+<br>Middleware to protect APIs and routes</br>
 
-Middleware to protect APIs and routes
+<br>Secure request validation</br>
 
-Secure request validation
+<br><h1>📱 UI & Experience</h1><br>
 
-📱 UI & Experience
+<br>Responsive and modern UI<br>
 
-Responsive and modern UI
+<br>Clean dashboard layout</br>
 
-Clean dashboard layout
+<br>Works across desktop, tablet, and mobile devices</br>
 
-Works across desktop, tablet, and mobile devices
+<br><h1>🛠️ Tech Stack</h1></br>
+<br>Frontend</br>
 
-🛠️ Tech Stack
-Frontend
+<br>React.js</br>
 
-React.js (Functional Components & Hooks)
+<br>Tailwind CSS</br>
 
-Tailwind CSS
+<br>React Router DOM</br>
 
-React Router DOM
+<br><h1>Backend</h1></br>
 
-Backend
+<br>Node.js</br>
 
-Node.js
+<br>Express.js</br>
 
-Express.js
+<br><h1>Database</h1></br>
 
-Database
+<br>MongoDB </br>
 
-MongoDB (Mongoose ODM)
+<br><h1>Authentication & Authorization</h1></br>
 
-Authentication & Authorization
+<br>JWT Authentication</br>
 
-JWT Authentication
+<br>Middleware-based route protection<br/>
 
-Middleware-based route protection
+<br><h1>Tools</h1></br>
 
-Deployment
+<br>Git & GitHub</br>
 
-Frontend: Vercel
-
-Backend: Vercel
-
-Database: MongoDB Atlas
-
-Tools
-
-Git & GitHub
-
-Postman (API testing)
+<h1>🔥 Vercel </h1>
+Hostel Leave Application Live On Vercel
+🌐 https://hostel-leave-application-9tzj.vercel.app/

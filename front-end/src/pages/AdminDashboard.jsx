@@ -150,7 +150,6 @@ const AdminDashboard = () => {
               bg="bg-white"
               textWhite={false}
             />
-            <Link to="/admin/adminleaves">
                <StatCard
               title="Leaves Approved"
               value={stats.approved}
@@ -159,7 +158,6 @@ const AdminDashboard = () => {
               textWhite={true}
 
             />
-            </Link>
             <StatCard
               title="Pending Leaves"
               value={stats.pending}

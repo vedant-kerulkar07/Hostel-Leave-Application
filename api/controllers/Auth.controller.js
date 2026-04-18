@@ -16,7 +16,7 @@ const generateToken = (user) => {
       role: user.role,
     },
     process.env.JWT_SECRET,
-    { expiresIn: "7d" }
+    { expiresIn: "1h" }
   );
 };
 
@@ -75,7 +75,7 @@ export const Login = async (req, res, next) => {
       secure: process.env.NODE_ENV === "production",
       sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
       path: "/",
-      maxAge: 7 * 24 * 60 * 60 * 1000,
+      maxAge: 60 * 60 * 1000,
     });
 
     const userData = user.toObject({ getters: true });
@@ -118,7 +118,7 @@ export const GoogleLogin = async (req, res, next) => {
       secure: process.env.NODE_ENV === "production",
       sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
       path: "/",
-      maxAge: 7 * 24 * 60 * 60 * 1000,
+      maxAge: 60 * 60 * 1000,
     });
 
     const userData = user.toObject({ getters: true });

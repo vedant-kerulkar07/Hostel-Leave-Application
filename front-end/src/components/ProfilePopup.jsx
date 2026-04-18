@@ -37,7 +37,7 @@ const ProfilePopup = ({ onClose }) => {
         return showToast("error", data.message);
       }
 
-      dispatch(setUser(data.user));
+      dispatch(setUser(data));
       showToast("success", "Profile updated successfully");
       onClose(); // ✅ close popup after success
     } catch (err) {

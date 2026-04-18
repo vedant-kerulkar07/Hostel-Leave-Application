@@ -25,6 +25,7 @@ import AdminAnalytics from "./components/AdminAnalytics";
 import StudentAnalytics from "./components/StudentAnalytics";
 import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 export default function App() {
   return (
@@ -33,19 +34,21 @@ export default function App() {
       <Route element={<AuthLayout />}>
         <Route path="/" element={<SignupForm />} />
         <Route path="/login" element={<Login />} />
-         <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/reset-password/:token" element={<ResetPassword />} />
       </Route>
 
       {/* User Dashboard Pages */}
-      <Route path="/dashboard" element={<MainLayout />}>
-        <Route index element={<Dashboard />} />
-        <Route path="applyleave" element={<ApplyLeave />} />
-        <Route path="timeline" element={<LeaveHistoryTimeline />} /> 
-        <Route path="leavehistory" element={<LeaveHistoryTable />} />
-        <Route path="notifications" element={<NotificationsPage />} />
-        <Route path="profile" element={<Profile />} />
-        {/* <Route path="profile" element={<ProfileSettingsPage />} /> */}
+      <Route element={<ProtectedRoute />}>
+        <Route path="/dashboard" element={<MainLayout />}>
+          <Route index element={<Dashboard />} />
+          <Route path="applyleave" element={<ApplyLeave />} />
+          <Route path="timeline" element={<LeaveHistoryTimeline />} />
+          <Route path="leavehistory" element={<LeaveHistoryTable />} />
+          <Route path="notifications" element={<NotificationsPage />} />
+          <Route path="profile" element={<Profile />} />
+          {/* <Route path="profile" element={<ProfileSettingsPage />} /> */}
+        </Route>
       </Route>
 
       {/* Admin Pages (protected) */}
@@ -60,7 +63,7 @@ export default function App() {
           <Route path="adminleaves" element={<AdminApprovedLeavesTable />} />
           <Route path="settings" element={<Settings />} />
           <Route path="adminanalytics" element={<AdminAnalytics />} />
-         <Route path="student/:studentId" element={<StudentAnalytics />} />
+          <Route path="student/:studentId" element={<StudentAnalytics />} />
         </Route>
       </Route>
     </Routes>
